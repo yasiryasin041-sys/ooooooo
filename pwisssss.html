@@ -1,0 +1,1484 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Untuk Kamu ❤️</title>
+
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    font-family: 'Poppins', sans-serif;
+    background: #1c1018;
+    color: white;
+}
+
+
+/* =========================
+   BACKGROUND
+========================= */
+
+.background {
+    position: fixed;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            rgba(30, 10, 20, 0.65),
+            rgba(30, 10, 20, 0.75)
+        ),
+        url("foto/foto1.jpg");
+
+    background-size: cover;
+    background-position: center;
+
+    filter: blur(8px);
+
+    transform: scale(1.1);
+
+    z-index: -2;
+
+    transition: 1s ease;
+}
+
+
+.overlay {
+    position: fixed;
+    inset: 0;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(255,130,170,0.18),
+            rgba(0,0,0,0.7)
+        );
+
+    z-index: -1;
+}
+
+
+/* =========================
+   SLIDER
+========================= */
+
+.slider {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+}
+
+
+.slide {
+    position: absolute;
+    inset: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 30px;
+
+    opacity: 0;
+
+    transform: scale(1.04);
+
+    pointer-events: none;
+
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s ease;
+}
+
+
+.slide.active {
+    opacity: 1;
+
+    transform: scale(1);
+
+    pointer-events: auto;
+}
+
+
+.content {
+    width: min(900px, 92%);
+    text-align: center;
+}
+
+
+/* =========================
+   TEXT
+========================= */
+
+.small-title {
+    font-size: 14px;
+
+    letter-spacing: 4px;
+
+    text-transform: uppercase;
+
+    color: #ffc1d8;
+
+    margin-bottom: 20px;
+}
+
+
+h1 {
+    font-family: 'Dancing Script', cursive;
+
+    font-size:
+        clamp(55px, 10vw, 110px);
+
+    color: white;
+
+    text-shadow:
+        0 5px 25px
+        rgba(255,100,160,0.4);
+
+    margin-bottom: 15px;
+}
+
+
+h2 {
+    font-family: 'Dancing Script', cursive;
+
+    font-size:
+        clamp(45px, 7vw, 80px);
+
+    color: #ffd1e2;
+
+    margin-bottom: 25px;
+}
+
+
+p {
+    max-width: 700px;
+
+    margin:
+        0 auto 18px;
+
+    font-size: 16px;
+
+    line-height: 2;
+
+    color: #f8e8ef;
+}
+
+
+.highlight {
+    color: #ff9fc1;
+    font-weight: 600;
+}
+
+
+/* =========================
+   VIDEO
+========================= */
+
+.video-frame {
+    width: min(750px, 90vw);
+
+    margin:
+        0 auto 25px;
+
+    padding: 10px;
+
+    background:
+        rgba(255,255,255,0.92);
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 20px 70px
+        rgba(0,0,0,0.5);
+
+    transform: rotate(-1deg);
+
+    animation:
+        videoFloat 4s
+        ease-in-out infinite;
+}
+
+
+.video-frame video {
+    width: 100%;
+
+    max-height: 55vh;
+
+    display: block;
+
+    object-fit: contain;
+
+    background: #000;
+
+    border-radius: 12px;
+}
+
+
+@keyframes videoFloat {
+
+    0%, 100% {
+        transform:
+            translateY(0)
+            rotate(-1deg);
+    }
+
+    50% {
+        transform:
+            translateY(-8px)
+            rotate(1deg);
+    }
+
+}
+
+
+/* =========================
+   OUR MEMORIES
+========================= */
+
+.gallery {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 18px;
+
+    width: min(750px, 90vw);
+
+    margin: 30px auto;
+}
+
+
+.gallery img {
+
+    width: 100%;
+
+    height: 240px;
+
+    object-fit: cover;
+
+    border-radius: 18px;
+
+    border:
+        3px solid
+        rgba(255,255,255,0.8);
+
+    box-shadow:
+        0 15px 40px
+        rgba(0,0,0,0.4);
+
+    transition: 0.4s;
+
+}
+
+
+.gallery img:hover {
+
+    transform:
+        scale(1.05)
+        rotate(2deg);
+
+    box-shadow:
+        0 20px 50px
+        rgba(255,100,160,0.3);
+}
+
+
+/* =========================
+   BUTTON
+========================= */
+
+.buttons {
+
+    position: fixed;
+
+    bottom: 35px;
+
+    left: 0;
+    right: 0;
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 15px;
+
+    z-index: 20;
+}
+
+
+button {
+
+    border: none;
+
+    padding: 12px 25px;
+
+    border-radius: 50px;
+
+    background:
+        rgba(255,255,255,0.15);
+
+    border:
+        1px solid
+        rgba(255,255,255,0.35);
+
+    color: white;
+
+    font-family:
+        'Poppins',
+        sans-serif;
+
+    cursor: pointer;
+
+    backdrop-filter:
+        blur(10px);
+
+    transition: 0.3s;
+}
+
+
+button:hover {
+
+    background: #e86c9a;
+
+    transform:
+        translateY(-3px);
+
+    box-shadow:
+        0 10px 25px
+        rgba(232,108,154,0.4);
+}
+
+
+.love-button {
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff7ba8,
+            #d9487c
+        );
+
+    padding:
+        15px 30px;
+
+    font-weight: 600;
+}
+
+
+/* =========================
+   DOT
+========================= */
+
+.dots {
+
+    position: fixed;
+
+    top: 25px;
+
+    left: 50%;
+
+    transform:
+        translateX(-50%);
+
+    display: flex;
+
+    gap: 8px;
+
+    z-index: 20;
+}
+
+
+.dot {
+
+    width: 8px;
+
+    height: 8px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(255,255,255,0.35);
+
+    transition: 0.3s;
+
+    cursor: pointer;
+}
+
+
+.dot.active {
+
+    width: 25px;
+
+    border-radius: 20px;
+
+    background: #ff9fc1;
+}
+
+
+/* =========================
+   HEART
+========================= */
+
+.heart {
+
+    position: fixed;
+
+    bottom: -50px;
+
+    color: #ff8fb5;
+
+    font-size: 20px;
+
+    pointer-events: none;
+
+    animation:
+        heartFloat
+        6s linear forwards;
+
+    z-index: 5;
+}
+
+
+@keyframes heartFloat {
+
+    0% {
+
+        transform:
+            translateY(0)
+            rotate(0deg);
+
+        opacity: 0;
+    }
+
+    15% {
+        opacity: 0.8;
+    }
+
+    100% {
+
+        transform:
+            translateY(-110vh)
+            rotate(360deg);
+
+        opacity: 0;
+    }
+
+}
+
+
+/* =========================
+   POPUP
+========================= */
+
+.popup {
+
+    position: fixed;
+
+    inset: 0;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    background:
+        rgba(0,0,0,0.75);
+
+    backdrop-filter:
+        blur(8px);
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transition: 0.5s;
+
+    z-index: 100;
+}
+
+
+.popup.show {
+
+    opacity: 1;
+
+    visibility: visible;
+}
+
+
+.popup-box {
+
+    width:
+        min(500px,90%);
+
+    padding:
+        45px 30px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #fff5f8,
+            #ffe0eb
+        );
+
+    color: #693b4d;
+
+    border-radius: 25px;
+
+    text-align: center;
+
+    box-shadow:
+        0 30px 100px
+        rgba(0,0,0,0.5);
+
+    animation:
+        popupAnimation
+        0.7s ease;
+}
+
+
+.popup-box h2 {
+    color: #c34e7b;
+}
+
+
+@keyframes popupAnimation {
+
+    from {
+
+        transform:
+            scale(0.5)
+            rotate(-5deg);
+
+    }
+
+    to {
+
+        transform:
+            scale(1)
+            rotate(0);
+
+    }
+
+}
+
+
+.signature {
+
+    margin-top: 25px;
+
+    font-family:
+        'Dancing Script',
+        cursive;
+
+    font-size: 30px;
+
+    color: #c34e7b;
+}
+
+
+/* =========================
+   MUSIC
+========================= */
+
+.music-player {
+
+    position: fixed;
+
+    top: 25px;
+
+    right: 25px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    padding:
+        7px 16px 7px 7px;
+
+    background:
+        rgba(255,255,255,0.15);
+
+    backdrop-filter:
+        blur(15px);
+
+    border:
+        1px solid
+        rgba(255,255,255,0.3);
+
+    border-radius: 50px;
+
+    color: white;
+
+    font-size: 12px;
+
+    z-index: 200;
+}
+
+
+.music-player button {
+
+    width: 42px;
+
+    height: 42px;
+
+    padding: 0;
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff7ba8,
+            #d9487c
+        );
+
+    color: white;
+
+    font-size: 18px;
+
+    cursor: pointer;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+}
+
+
+.music-player button.playing {
+
+    animation:
+        musicSpin
+        3s linear infinite;
+}
+
+
+@keyframes musicSpin {
+
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:600px) {
+
+    .slide {
+        padding: 20px;
+    }
+
+
+    p {
+
+        font-size: 14px;
+
+        line-height: 1.8;
+    }
+
+
+    .video-frame {
+
+        width: 95vw;
+
+        padding: 7px;
+    }
+
+
+    .video-frame video {
+
+        max-height: 40vh;
+    }
+
+
+    .gallery {
+
+        width: 95vw;
+
+        gap: 8px;
+    }
+
+
+    .gallery img {
+
+        height: 150px;
+
+        border-radius: 12px;
+    }
+
+
+    .buttons {
+
+        bottom: 20px;
+    }
+
+
+    button {
+
+        padding:
+            10px 17px;
+
+        font-size: 12px;
+    }
+
+
+    .music-player {
+
+        top: 15px;
+
+        right: 15px;
+    }
+
+
+    .music-player span {
+
+        display: none;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- BACKGROUND -->
+
+<div
+    class="background"
+    id="background">
+</div>
+
+<div class="overlay"></div>
+
+
+
+<!-- =========================
+     SLIDER
+========================= -->
+
+<main class="slider">
+
+
+    <!-- =====================
+         SLIDE 1
+    ====================== -->
+
+    <section class="slide active">
+
+        <div class="content">
+
+            <div class="small-title">
+                Sebuah pesan untuk kamu
+            </div>
+
+            <h1>
+                I'm Sorry ❤️
+            </h1>
+
+            <p>
+                Aku bikin website kecil ini
+                bukan karena kata-kata aku
+                paling indah...
+            </p>
+
+            <p>
+                Tapi karena aku benar-benar
+                ingin bilang maaf karena
+                ga bilang keluar ke pada
+                kamu.
+            </p>
+
+            <p class="highlight">
+                Aku minta maaf. ❤️
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================
+         SLIDE 2 - VIDEO
+    ====================== -->
+
+    <section class="slide">
+
+        <div class="content">
+
+            <div class="video-frame">
+
+                <video
+                    id="memoryVideo"
+                    controls
+                    playsinline
+                    preload="metadata">
+
+                    <source
+                        src="C:\Users\Irfan yasir\Videos\vid 1.mp4"
+                        type="video/mp4">
+
+                    Browser kamu tidak
+                    mendukung video.
+
+                </video>
+
+            </div>
+
+            <h2>
+                Masih Ingat Ini? ❤️
+            </h2>
+
+            <p>
+                Ada beberapa kenangan yang mungkin
+                nggak akan pernah bisa aku lupain.
+            </p>
+
+            <p>
+                Karena di balik video ini,
+                ada cerita tentang kita
+                yang selalu aku simpan.
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================
+         SLIDE 3
+    ====================== -->
+
+    <section class="slide">
+
+        <div class="content">
+
+            <h2>
+                Aku Sadar...
+            </h2>
+
+            <p>
+                Kadang aku terlalu egois.
+                Kadang aku kurang peka.
+                Kadang aku melakukan sesuatu
+                tanpa memikirkan perasaan kamu.
+            </p>
+
+            <p>
+                Dan aku tahu,
+                mungkin hal kecil buat aku
+                bisa menjadi hal besar buat kamu.
+            </p>
+
+            <p class="highlight">
+                Untuk semua kesalahan itu,
+                aku benar-benar minta maaf.
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================
+         SLIDE 4 - 3 FOTO
+    ====================== -->
+
+    <section class="slide">
+
+        <div class="content">
+
+            <div class="small-title">
+                Little memories
+            </div>
+
+            <h2>
+                Our Memories ❤️
+            </h2>
+
+            <div class="gallery">
+
+                <img
+                    src="C:\Users\Irfan yasir\Videos\WhatsApp Image 2026-08-21 at 17.43.33.jpeg"
+                    alt="Foto kenangan 1">
+
+                <img
+                    src="C:\Users\Irfan yasir\Videos\poto 1.jpeg"
+                    alt="Foto kenangan 2">
+
+                <img
+                    src="C:\Users\Irfan yasir\Videos\WhatsApp Image 2026-08-21 at 17.43.15.jpeg"
+                    alt="Foto kenangan 3">
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================
+         SLIDE 5
+    ====================== -->
+
+    <section class="slide">
+
+        <div class="content">
+
+            <h2>
+                Kalau Boleh...
+            </h2>
+
+            <p>
+                Aku nggak mau memaksa kamu
+                untuk langsung melupakan semuanya.
+            </p>
+
+            <p>
+                Aku cuma berharap kamu mau
+                memberikan aku kesempatan
+                untuk memperbaiki kesalahan aku.
+            </p>
+
+            <p class="highlight">
+                Aku akan belajar
+                menjadi lebih baik.
+            </p>
+
+            <button
+                class="love-button"
+                onclick="openPopup()">
+
+                Klik kalau kamu mau ❤️
+
+            </button>
+
+        </div>
+
+    </section>
+
+
+</main>
+
+
+
+<!-- =========================
+     DOTS
+========================= -->
+
+<div class="dots">
+
+    <div class="dot active"></div>
+
+    <div class="dot"></div>
+
+    <div class="dot"></div>
+
+    <div class="dot"></div>
+
+    <div class="dot"></div>
+
+</div>
+
+
+
+<!-- =========================
+     BUTTONS
+========================= -->
+
+<div class="buttons">
+
+    <button onclick="prevSlide()">
+        ← Kembali
+    </button>
+
+    <button onclick="nextSlide()">
+        Lanjut →
+    </button>
+
+</div>
+
+
+
+<!-- =========================
+     POPUP
+========================= -->
+
+<div
+    class="popup"
+    id="popup">
+
+    <div class="popup-box">
+
+        <div style="font-size:55px;">
+            ❤️
+        </div>
+
+        <h2>
+            Terima Kasih
+        </h2>
+
+        <p>
+            Apapun jawaban kamu,
+            aku tetap bersyukur pernah
+            punya cerita seindah ini
+            sama kamu.
+        </p>
+
+        <p>
+            Tapi kalau masih ada sedikit
+            ruang untuk aku...
+        </p>
+
+        <p class="highlight">
+            Makasih Ya Udah Maafin Aku.
+        </p>
+
+        <div class="signature">
+            — Dari seseorang
+            yang sayang kamu
+        </div>
+
+        <button
+            onclick="closePopup()"
+            style="
+                margin-top:25px;
+                background:#c85b82;
+            ">
+
+            ❤️ Tutup
+
+        </button>
+
+    </div>
+
+</div>
+
+
+
+<!-- =========================
+     MUSIC
+========================= -->
+
+<div class="music-player">
+
+    <button
+        id="musicBtn"
+        onclick="toggleMusic()">
+
+        🎵
+
+    </button>
+
+    <span id="musicText">
+        Putar lagu
+    </span>
+
+</div>
+
+
+<audio
+    id="music"
+    loop>
+
+    <source
+        src="C:\Users\Irfan yasir\Downloads\I'M SORRY, MY LOVE - Victor Wood (with Lyrics) - Chraize Borromeo.mp3"
+        type="audio/mpeg">
+
+</audio>
+
+
+
+<script>
+
+
+/* =========================
+   SLIDER
+========================= */
+
+const slides =
+    document.querySelectorAll(".slide");
+
+const dots =
+    document.querySelectorAll(".dot");
+
+const background =
+    document.getElementById("background");
+
+const memoryVideo =
+    document.getElementById("memoryVideo");
+
+let current = 0;
+
+
+function showSlide(index) {
+
+    if (index >= slides.length) {
+        current = 0;
+    }
+
+    if (index < 0) {
+        current = slides.length - 1;
+    }
+
+
+    slides.forEach((slide, i) => {
+
+        slide.classList.toggle(
+            "active",
+            i === current
+        );
+
+    });
+
+
+    dots.forEach((dot, i) => {
+
+        dot.classList.toggle(
+            "active",
+            i === current
+        );
+
+    });
+
+
+    /* Background */
+
+    const photos = [
+
+        "foto/foto1.jpg",
+        "foto/foto2.jpg",
+        "foto/foto3.jpg"
+
+    ];
+
+
+    background.style.backgroundImage = `
+
+        linear-gradient(
+            rgba(30,10,20,0.65),
+            rgba(30,10,20,0.75)
+        ),
+
+        url("${photos[current % photos.length]}")
+
+    `;
+
+
+    /* Video berhenti ketika bukan Slide 2 */
+
+    if (current !== 1) {
+
+        memoryVideo.pause();
+
+    }
+
+}
+
+
+function nextSlide() {
+
+    current++;
+
+    if (current >= slides.length) {
+        current = 0;
+    }
+
+    showSlide(current);
+
+}
+
+
+function prevSlide() {
+
+    current--;
+
+    if (current < 0) {
+        current = slides.length - 1;
+    }
+
+    showSlide(current);
+
+}
+
+
+
+/* =========================
+   DOT CLICK
+========================= */
+
+dots.forEach((dot, index) => {
+
+    dot.addEventListener(
+        "click",
+        () => {
+
+            current = index;
+
+            showSlide(current);
+
+        }
+    );
+
+});
+
+
+
+/* =========================
+   KEYBOARD
+========================= */
+
+document.addEventListener(
+    "keydown",
+    function(event) {
+
+        if (event.key === "ArrowRight") {
+            nextSlide();
+        }
+
+        if (event.key === "ArrowLeft") {
+            prevSlide();
+        }
+
+    }
+);
+
+
+
+/* =========================
+   HEART
+========================= */
+
+function createHeart() {
+
+    const heart =
+        document.createElement("div");
+
+    heart.className = "heart";
+
+    heart.innerHTML =
+        Math.random() > 0.5
+        ? "❤"
+        : "♡";
+
+    heart.style.left =
+        Math.random() * 100 + "vw";
+
+    heart.style.fontSize =
+        15 +
+        Math.random() * 25 +
+        "px";
+
+    heart.style.animationDuration =
+        5 +
+        Math.random() * 4 +
+        "s";
+
+    document.body.appendChild(heart);
+
+    setTimeout(() => {
+
+        heart.remove();
+
+    }, 9000);
+
+}
+
+
+setInterval(
+    createHeart,
+    700
+);
+
+
+
+/* =========================
+   POPUP
+========================= */
+
+function openPopup() {
+
+    document
+        .getElementById("popup")
+        .classList.add("show");
+
+
+    for (
+        let i = 0;
+        i < 30;
+        i++
+    ) {
+
+        setTimeout(
+            createHeart,
+            i * 80
+        );
+
+    }
+
+}
+
+
+function closePopup() {
+
+    document
+        .getElementById("popup")
+        .classList.remove("show");
+
+}
+
+
+
+/* =========================
+   MUSIC
+========================= */
+
+const music =
+    document.getElementById("music");
+
+const musicBtn =
+    document.getElementById("musicBtn");
+
+const musicText =
+    document.getElementById("musicText");
+
+let musicPlaying = false;
+
+
+function playMusic() {
+
+    music.volume = 0.7;
+
+    music.play()
+        .then(() => {
+
+            musicPlaying = true;
+
+            musicBtn.innerHTML = "⏸️";
+
+            musicText.innerHTML =
+                "Sedang diputar...";
+
+            musicBtn.classList.add(
+                "playing"
+            );
+
+        })
+        .catch(() => {
+
+            console.log(
+                "Autoplay diblokir browser."
+            );
+
+        });
+
+}
+
+
+/* =========================
+   AUTOPLAY
+========================= */
+
+window.addEventListener(
+    "load",
+    () => {
+
+        playMusic();
+
+    }
+);
+
+
+/* Kalau browser blokir autoplay,
+   klik pertama akan menjalankan musik */
+
+document.addEventListener(
+    "click",
+    function startMusic() {
+
+        if (!musicPlaying) {
+            playMusic();
+        }
+
+        document.removeEventListener(
+            "click",
+            startMusic
+        );
+
+    }
+);
+
+
+
+/* =========================
+   PLAY / PAUSE MUSIC
+========================= */
+
+function toggleMusic() {
+
+    if (musicPlaying) {
+
+        music.pause();
+
+        musicPlaying = false;
+
+        musicBtn.innerHTML = "🎵";
+
+        musicText.innerHTML =
+            "Putar lagu";
+
+        musicBtn.classList.remove(
+            "playing"
+        );
+
+    } else {
+
+        playMusic();
+
+    }
+
+}
+
+</script>
+
+</body>
+
+</html>
